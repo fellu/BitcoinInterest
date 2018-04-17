@@ -9,6 +9,9 @@
 #include "coins.h"
 #include "dbwrapper.h"
 #include "chain.h"
+#include "addressindex.h"
+#include "spentindex.h"
+#include "timestampindex.h"
 
 #include <map>
 #include <string>
