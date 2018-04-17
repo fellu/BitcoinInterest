@@ -1176,7 +1176,6 @@ UniValue getspentinfo(const JSONRPCRequest& request)
     return obj;
 }
 
-
 static const CRPCCommand commands[] =
 { //  category              name                      actor (function)         okSafeMode
   //  --------------------- ------------------------  -----------------------  ----------
@@ -1186,6 +1185,16 @@ static const CRPCCommand commands[] =
     { "util",               "createmultisig",         &createmultisig,         true,  {"nrequired","keys"} },
     { "util",               "verifymessage",          &verifymessage,          true,  {"address","signature","message"} },
     { "util",               "signmessagewithprivkey", &signmessagewithprivkey, true,  {"privkey","message"} },
+
+    /* Address index */
+    { "addressindex",       "getaddressmempool",      &getaddressmempool,      true, {} },
+    { "addressindex",       "getaddressutxos",        &getaddressutxos,        false, {} },
+    { "addressindex",       "getaddressdeltas",       &getaddressdeltas,       false, {} },
+    { "addressindex",       "getaddresstxids",        &getaddresstxids,        false, {} },
+    { "addressindex",       "getaddressbalance",      &getaddressbalance,      false, {} },
+
+    /* Blockchain */
+    { "blockchain",         "getspentinfo",           &getspentinfo,           false, {} },
 
     /* Not shown in help */
     { "hidden",             "setmocktime",            &setmocktime,            true,  {"timestamp"}},
